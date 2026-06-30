@@ -1,7 +1,10 @@
 import java.time.Year;
 import java.util.Date;
+import java.util.ArrayList;
 
 public class Student extends Person{
+
+    ArrayList<Student> grades;
     private static int nextStudentId=1;
     private int studentId;
     protected String major;
