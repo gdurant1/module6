@@ -10,6 +10,7 @@ public class Student extends Person{
     protected Year expectedGraduation;
 
     public Student(){
+        super();
         this.studentId = nextStudentId;
         this.major = "UnDeclared";
         this.degree = "N/A";

@@ -7,7 +7,7 @@ public class Person {
 
     public Person(){
         this.firstName = firstName;
-        this.middleName = middleName;
+        this.middleName = "";
         this.lastName = lastName;
         this.dateOfBirth = null;
     }
