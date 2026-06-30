@@ -4,14 +4,14 @@ import java.util.ArrayList;
 
 public class Student extends Person{
 
-    ArrayList<Student> grades;
+    ArrayList<Student> grades; //holds grades to calculate gpa
     private static int nextStudentId=1;
     private int studentId;
     protected String major;
     protected String degree;
     protected double gpa;
     protected Year expectedGraduation;
-
+    //basic constructor
     public Student(){
         super();
         this.studentId = nextStudentId;
@@ -22,8 +22,9 @@ public class Student extends Person{
         nextStudentId++;
     }
 
-    public Student(String major, String degree, double gpa, Year expectedGraduation){
-        super();
+    public Student(String firstName, String middleName, String lastName, Date dateOfBirth,
+                   String major, String degree, double gpa, Year expectedGraduation){
+        super(firstName, middleName, lastName, dateOfBirth);//passes names and date of birth to person constructor.
         this.studentId = nextStudentId;
         this.major = major;
         this.degree = degree;
