@@ -20,6 +20,7 @@ public class Student extends Person{
     }
 
     public Student(String major, String degree, double gpa, Year expectedGraduation){
+        super();
         this.studentId = nextStudentId;
         this.major = major;
         this.degree = degree;
