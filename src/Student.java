@@ -33,6 +33,12 @@ public class Student extends Person{
         nextStudentId++;
     }
 
+    public int getStudentId(){ return studentId; }
+    public String getMajor(){ return major; }
+    public String getDegree(){ return degree; }
+
+    public Year getExpectedGraduation(){return expectedGraduation; }
+
 
 
 }
