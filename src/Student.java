@@ -23,12 +23,12 @@ public class Student extends Person{
     }
 
     public Student(String firstName, String middleName, String lastName, Date dateOfBirth,
-                   String major, String degree, double gpa, Year expectedGraduation){
+                   String major, String degree, Year expectedGraduation){
         super(firstName, middleName, lastName, dateOfBirth);//passes names and date of birth to person constructor.
         this.studentId = nextStudentId;
         this.major = major;
         this.degree = degree;
-        this.gpa = gpa;
+        this.gpa = 0.0;
         this.expectedGraduation = expectedGraduation;
         nextStudentId++;
     }
@@ -58,6 +58,7 @@ public class Student extends Person{
         do{ //loop to gather grades
             System.out.print("Enter Grade for Class "+ classNum + " : ");
             String grades = reader.next();
+            //if-else loop for break
             if(grades.equalsIgnoreCase("EXIT")){stopInput=true;}
             else {
                 //change letter grades to points
@@ -86,8 +87,13 @@ public class Student extends Person{
     }
 
     private double calculateGpa(ArrayList<Double> gradePoints){
-        double pointSum = 0;
-
+        double sum = 0.0;
+        //if no grades
+        if(gradePoints == null || gradePoints.isEmpty()){
+            return 0.0; }
+        for(int i = 0; i < gradePoints.size(); i++ ){
+            sum += gradePoints.get(i); }
+        double gpa = sum/ gradePoints.size();
         return gpa;
     }
 }
