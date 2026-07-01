@@ -48,45 +48,48 @@ public class Student extends Person{
     public void setExpectedGraduation(Year expectedGraduation){
         this.expectedGraduation = expectedGraduation; }
 
-    private double calculateGpa(){
-        //no gpa
+    private double inputGpa(){
         //get gpa
         ArrayList<Double> gradePoints = new ArrayList<Double>();
         Scanner reader = new Scanner(System.in);
         int classNum = 1;
-        boolean stopGpa = false;
+        boolean stopInput = false;
         String grades;
 
         do{ //loop to gather grades
             System.out.print("Enter Grade for Class "+ classNum + " : ");
             grades[i] = reader.nextString();
-            if(grades == "exit"){stopGpa=true;}
+            if(grades == "exit"){stopInput=true;}
             else {
                 //change letter grades to points
                 if (grades == a || A) {
                     gradePoints[i] = 4.0;
                 }
                 else if (grades == a - || A -) {
-                    gradePoints[i] = 3.67; }
+                    gradePoints.add(3.67); }
                 else if (grades == b + || B +) {
-                    gradePoints[i] = 3.33; }
+                    gradePoints.add(3.33); }
                 else if (grades == b || B) {
-                    gradePoints[i] = 3; }
+                    gradePoints.add(3.0); }
                 else if (grades == b - || B -) {
-                    gradePoints[i] = 3.67;}
+                    gradePoints.add(3.67);}
                 else if (grades == c + || C +) {
-                    gradePoints[i] = 2.33; }
+                    gradePoints.add(2.33); }
                 else if (grades == c || C) {
                     gradePoints[i] = 2; }
                 else if (grades == d || D) {
-                    gradePoints[i] = 1;}
+                    gradePoints.add(1.0);}
                 else {
                     gradePoints[i] = 0;
                 }
                 classNum++;
             }
-        } while (!stopGpa);
-        //calculate gpa
-        for (int i = 0; i < ArraList.size(); i++ ){}
+        } while (!stopInput);
+
+
+    }
+
+    private double calculateGpa(){
+
     }
 }
