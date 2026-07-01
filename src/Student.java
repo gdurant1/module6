@@ -17,7 +17,7 @@ public class Student extends Person{
         this.studentId = nextStudentId;
         this.major = "UnDeclared";
         this.degree = "N/A";
-        this.gpa = gpa;
+        this.gpa = 0.0;
         this.expectedGraduation = null;
         nextStudentId++;
     }
@@ -52,13 +52,13 @@ public class Student extends Person{
         //no gpa
         //get gpa
         ArrayList<Double> gradePoints = new ArrayList<Double>();
+        Scanner reader = new Scanner(System.in);
+        int classNum = 1;
         boolean stopGpa;
-        do{
-            int classNum = 1;
-            String grades;
-            grades;
-            for (int i = 0; i=>0; i++){
-            Scanner reader = new Scanner(System.in);
+        String grades;
+
+        do{ //loop to gather grades
+
             System.out.print("Enter Grade for Class "+ classNum + " : ");
             grades[i] = reader.nextString();
             If (grades == a || A){ gradePoints[i]= 4.0; }
