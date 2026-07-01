@@ -136,3 +136,7 @@ public class Durant_JF_7_4_3 {
 //    }
 
 }
+
+//https://www.geeksforgeeks.org/java/java-util-arraylist-add-method-java/
+//https://stackoverflow.com/questions/513832/how-do-i-compare-strings-in-java
+//https://stackoverflow.com/questions/2220400/how-do-i-make-my-string-comparison-case-insensitive
