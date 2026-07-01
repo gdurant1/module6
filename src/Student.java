@@ -48,17 +48,19 @@ public class Student extends Person{
     public void setExpectedGraduation(Year expectedGraduation){
         this.expectedGraduation = expectedGraduation; }
 
-    ArrayList<Double> gradePoints = new ArrayList<Double>();
-    private double inputGpa(){
-        //get gpa
+    private double calculateGpa(){
+        ArrayList<Double> gradePoints = new ArrayList<Double>();
         Scanner reader = new Scanner(System.in);
-        int classNum = 1;
+        int classNum = 0;
+        double sum = 0.0;
         boolean stopInput = false;
+        //flavor text
+        System.out.println("Enter letter grades. Type 'EXIT' to Stop.");
 
         do{ //loop to gather grades
             System.out.print("Enter Grade for Class "+ classNum + " : ");
             String grades = reader.next();
-            //if-else loop for break
+            //if-else loop to creat a break
             if(grades.equalsIgnoreCase("EXIT")){stopInput=true;}
             else {
                 //change letter grades to points
@@ -71,7 +73,7 @@ public class Student extends Person{
                 else if (grades.equalsIgnoreCase("B")) {
                     gradePoints.add(3.0); }
                 else if (grades.equalsIgnoreCase("B-")) {
-                    gradePoints.add(3.67);}
+                    gradePoints.add(2.67);}
                 else if (grades.equalsIgnoreCase("C+")) {
                     gradePoints.add(2.33); }
                 else if (grades.equalsIgnoreCase("C")) {
@@ -80,19 +82,18 @@ public class Student extends Person{
                     gradePoints.add(1.0);}
                 else {
                     gradePoints.add(0.0); }
-                classNum++;
-            }
+                classNum++; }
         } while (!stopInput);
 
-            double sum = 0.0;
             //if no grades
-            if (gradePoints == null || gradePoints.isEmpty()) {
-                return 0.0;
-            }
+            if (gradePoints.isEmpty()) {
+                this.gpa = 0.0;
+                return this.gpa;}
+            //calculate average
             for (int i = 0; i < gradePoints.size(); i++) {
                 sum += gradePoints.get(i);
             }
-            double gpa = sum / gradePoints.size();
-            return gpa;
+            this.gpa = sum / gradePoints.size();
+            return this.gpa;
         }
 }
