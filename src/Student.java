@@ -48,18 +48,17 @@ public class Student extends Person{
     public void setExpectedGraduation(Year expectedGraduation){
         this.expectedGraduation = expectedGraduation; }
 
+    ArrayList<Double> gradePoints = new ArrayList<Double>();
     private double inputGpa(){
         //get gpa
-        ArrayList<Double> gradePoints = new ArrayList<Double>();
         Scanner reader = new Scanner(System.in);
         int classNum = 1;
         boolean stopInput = false;
-        String grades;
 
         do{ //loop to gather grades
             System.out.print("Enter Grade for Class "+ classNum + " : ");
-            grades[i] = reader.nextString();
-            if(grades == "exit"){stopInput=true;}
+            String grades = reader.next();
+            if(grades.equalsIgnoreCase("EXIT")){stopInput=true;}
             else {
                 //change letter grades to points
                 if (grades.equalsIgnoreCase("A")) {
@@ -83,11 +82,12 @@ public class Student extends Person{
                 classNum++;
             }
         } while (!stopInput);
-
-
+        return 0;//need to change
     }
 
-    private double calculateGpa(){
+    private double calculateGpa(ArrayList<Double> gradePoints){
+        double pointSum = 0;
 
+        return gpa;
     }
 }
