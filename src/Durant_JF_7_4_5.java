@@ -32,15 +32,18 @@ class Instrument {
         return price * 0.75; } // -25%
 }
 
+//sub_Class
 class StringInstrument extends Instrument {
     private int numStrings;
 
     public StringInstrument(boolean onSale, double price, int numInStock, int numStrings){
         super(onSale, price, numInStock);
         this.numStrings = numStrings; }
-
+    //getters and setters
     public int getNumStrings(){ return numStrings; }
-
     public void setNumStrings(int numStrings) {this.numStrings = numStrings; }
+
 }
 
+//references for work
+//https://stackoverflow.com/questions/26172704/java-how-to-include-2-classes-in-the-same-file
