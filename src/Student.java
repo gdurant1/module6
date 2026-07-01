@@ -58,20 +58,33 @@ public class Student extends Person{
         String grades;
 
         do{ //loop to gather grades
-
             System.out.print("Enter Grade for Class "+ classNum + " : ");
             grades[i] = reader.nextString();
-            If (grades == a || A){ gradePoints[i]= 4.0; }
-                else if (grades == a- || A-){gradePoints[i]=3.67;}
-                else if (grades== b+ || B+ ) {gradePoints[i]=3.33;}
-                else if (grades== b || B ) {gradePoints[i]=3;}
-                else if (grades== b- || B- ) {gradePoints[i]=3.67;}
-                else if (grades== c+ || C+ ) {gradePoints[i]=2.33;}
-                else if (grades== c || C ) {gradePoints[i]=2;}
-                else if (grades== d || D ) {gradePoints[i]=1;}
-                else {gradePoints[i]=0;}
-
+            if(grades == "exit"){stopGpa=true;}
+            else {
+                //change letter grades to points
+                if (grades == a || A) {
+                    gradePoints[i] = 4.0;
+                }
+                else if (grades == a - || A -) {
+                    gradePoints[i] = 3.67; }
+                else if (grades == b + || B +) {
+                    gradePoints[i] = 3.33; }
+                else if (grades == b || B) {
+                    gradePoints[i] = 3; }
+                else if (grades == b - || B -) {
+                    gradePoints[i] = 3.67;}
+                else if (grades == c + || C +) {
+                    gradePoints[i] = 2.33; }
+                else if (grades == c || C) {
+                    gradePoints[i] = 2; }
+                else if (grades == d || D) {
+                    gradePoints[i] = 1;}
+                else {
+                    gradePoints[i] = 0;
+                }
                 classNum++;
+            }
         } while (!stopGpa);
         //calculate gpa
         for (int i = 0; i < ArraList.size(); i++ ){}
