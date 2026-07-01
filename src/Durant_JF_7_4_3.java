@@ -4,8 +4,10 @@ import java.util.Date;
 import java.util.Scanner;
 
 public class Durant_JF_7_4_3 {
-    public static void main(String[] args) {
-        Student jack = new Student("Jack", "doe", "ray", "computers", "AS", 2026 );
+    public void main(String[] args) {
+        Student Adam = new Student("Adam", "Boe", "Cain", "Computers", "Associates", Year.of(2026));
+
+
     }
 
     public class Student extends Person{
@@ -38,12 +40,14 @@ public class Durant_JF_7_4_3 {
             nextStudentId++;
         }
 
+        //getters
         public int getStudentId(){ return studentId; }
         public String getMajor(){ return major; }
         public String getDegree(){ return degree; }
         double getGpa(){ return gpa; }
         public Year getExpectedGraduation(){return expectedGraduation; }
 
+        //setters
         public void setMajor(String major){
             this.major = major; }
         public void setDegree(String degree){
@@ -52,15 +56,15 @@ public class Durant_JF_7_4_3 {
             this.gpa = gpa; }
         public void setExpectedGraduation(Year expectedGraduation){
             this.expectedGraduation = expectedGraduation; }
-        //to take input
-        private double calculateGpa(){}
+
         //for manuall input of student grades
-        private double inputGpa(){
+        public double inputGpa(){
             ArrayList<Double> gradePoints = new ArrayList<Double>();
             Scanner reader = new Scanner(System.in);
             int classNum = 0;
             double sum = 0.0;
             boolean stopInput = false;
+
             //flavor text
             System.out.println("Enter letter grades. Type 'EXIT' to Stop.");
 
