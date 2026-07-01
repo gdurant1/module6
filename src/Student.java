@@ -11,6 +11,7 @@ public class Student extends Person{
     protected String degree;
     protected double gpa;
     protected Year expectedGraduation;
+
     //basic constructor
     public Student(){
         super();
@@ -19,30 +20,38 @@ public class Student extends Person{
         this.degree = "N/A";
         this.gpa = 0.0;
         this.expectedGraduation = null;
-        nextStudentId++;
-    }
+        nextStudentId++; }
 
-    public Student(String firstName, String middleName, String lastName, Date dateOfBirth,
-                   String major, String degree, Year expectedGraduation){
-        super(firstName, middleName, lastName, dateOfBirth);//passes names and date of birth to person constructor.
+    //middle constructor with defaults
+    public Student(String firstName, String lastName, Date dateOfBirth){
+        super(firstName, lastName, dateOfBirth);//passes names and date of birth to person constructor.
         this.studentId = nextStudentId;
         this.major = major;
         this.degree = degree;
         this.gpa = 0.0;
         this.expectedGraduation = expectedGraduation;
-        nextStudentId++;
-    }
+        nextStudentId++; }
 
-    public Student(String firstName, String middleName, String lastName, Date dateOfBirth,
-                  String major = "", String degree, Year expectedGraduation){
-        super(firstName, middleName, lastName, dateOfBirth);//passes names and date of birth to person constructor.
+    //constructor for testing
+    public Student(String firstName, String lastName, Date dateOfBirth, String major, Year expectedGraduation){
+        super(firstName, lastName, dateOfBirth);//passes names and date of birth to person constructor.
         this.studentId = nextStudentId;
-        this.major = " ";
+        this.major = major;
         this.degree = degree;
         this.gpa = 0.0;
         this.expectedGraduation = expectedGraduation;
-        nextStudentId++;
-    }
+        nextStudentId++; }
+
+    //master constructor with all values
+    public Student(String firstName, String middleName, String lastName, Date dateOfBirth,
+                  String major, String degree, Year expectedGraduation){
+        super(firstName, middleName, lastName, dateOfBirth);//passes names and date of birth to person constructor.
+        this.studentId = nextStudentId;
+        this.major = major;
+        this.degree = degree;
+        this.gpa = gpa;
+        this.expectedGraduation = expectedGraduation;
+        nextStudentId++; }
 
     //getters
     public int getStudentId(){ return studentId; }

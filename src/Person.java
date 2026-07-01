@@ -11,6 +11,14 @@ public class Person {
         this.lastName = lastName;
         this.dateOfBirth = null;
     }
+
+    public Person(String firstName, String lastName, Date dateOfBirth){
+        this.firstName = firstName;
+        this.middleName = " ";
+        this.lastName = lastName;
+        this.dateOfBirth = null;
+    }
+
     public Person(String firstName, String middleName,
                   String lastName, Date dateOfBirth){
         this.firstName = firstName;
