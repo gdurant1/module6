@@ -54,7 +54,7 @@ public class Student extends Person{
         ArrayList<Double> gradePoints = new ArrayList<Double>();
         Scanner reader = new Scanner(System.in);
         int classNum = 1;
-        boolean stopGpa;
+        boolean stopGpa = false;
         String grades;
 
         do{ //loop to gather grades
@@ -71,10 +71,8 @@ public class Student extends Person{
                 else if (grades== d || D ) {gradePoints[i]=1;}
                 else {gradePoints[i]=0;}
 
-                }
-
-                classNum++;}
-        }while{stopGpa}
+                classNum++;
+        } while (!stopGpa);
         //calculate gpa
         for (int i = 0; i < ArraList.size(); i++ ){}
     }
