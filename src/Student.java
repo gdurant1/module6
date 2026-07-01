@@ -36,8 +36,20 @@ public class Student extends Person{
     public int getStudentId(){ return studentId; }
     public String getMajor(){ return major; }
     public String getDegree(){ return degree; }
-
+    double getGpa(){ return gpa; }
     public Year getExpectedGraduation(){return expectedGraduation; }
+
+    public void setMajor(String major){
+        this.major = major; }
+    public void setDegree(String degree){
+        this.degree = degree; }
+
+    private void setGpa(double gpa){
+        this.gpa = gpa; }
+
+    public void setExpectedGraduation(Year expectedGraduation){
+        this.expectedGraduation = expectedGraduation; }
+
 
 
 
