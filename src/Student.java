@@ -1,10 +1,10 @@
 import java.time.Year;
 import java.util.Date;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Student extends Person{
-
-    ArrayList<Student> grades; //holds grades to calculate gpa
+    
     private static int nextStudentId=1;
     private int studentId;
     protected String major;
@@ -43,14 +43,30 @@ public class Student extends Person{
         this.major = major; }
     public void setDegree(String degree){
         this.degree = degree; }
-
     private void setGpa(double gpa){
         this.gpa = gpa; }
-
     public void setExpectedGraduation(Year expectedGraduation){
         this.expectedGraduation = expectedGraduation; }
 
-
-
-
+    private double calculateGpa(){
+        //no gpa
+        //get gpa
+        ArrayList<Double> gradePoints = new ArrayList<Double>();
+        boolean stopGpa;
+        do{
+            int classNum = 1;
+            String grades;
+            grades;
+            for (int i = 0; i=>0; i++){
+            Scanner reader = new Scanner(System.in);
+            System.out.print("Enter Grade for Class "+ classNum + " : ");
+            grades[i] = reader.nextString();
+            If (grades == a || A){ gradePoints[i]= 4.0; }
+                else if (grad)
+            
+            classNum++;}
+        }while{stopGpa}
+        //calculate gpa
+        for (int i = 0; i < ArraList.size(); i++ ){}
+    }
 }
