@@ -62,26 +62,24 @@ public class Student extends Person{
             if(grades == "exit"){stopInput=true;}
             else {
                 //change letter grades to points
-                if (grades == a || A) {
-                    gradePoints[i] = 4.0;
-                }
-                else if (grades == a - || A -) {
+                if (grades.equalsIgnoreCase("A")) {
+                    gradePoints.add(4.0); }
+                else if (grades.equalsIgnoreCase("A-")) {
                     gradePoints.add(3.67); }
-                else if (grades == b + || B +) {
+                else if (grades.equalsIgnoreCase("B+")) {
                     gradePoints.add(3.33); }
-                else if (grades == b || B) {
+                else if (grades.equalsIgnoreCase("B")) {
                     gradePoints.add(3.0); }
-                else if (grades == b - || B -) {
+                else if (grades.equalsIgnoreCase("B-")) {
                     gradePoints.add(3.67);}
-                else if (grades == c + || C +) {
+                else if (grades.equalsIgnoreCase("C+")) {
                     gradePoints.add(2.33); }
-                else if (grades == c || C) {
-                    gradePoints[i] = 2; }
-                else if (grades == d || D) {
+                else if (grades.equalsIgnoreCase("C")) {
+                    gradePoints.add(2.0); }
+                else if (grades.equalsIgnoreCase("D")) {
                     gradePoints.add(1.0);}
                 else {
-                    gradePoints[i] = 0;
-                }
+                    gradePoints.add(0.0); }
                 classNum++;
             }
         } while (!stopInput);
