@@ -25,5 +25,4 @@ public class Person {
     public String getName(){ return firstName + " " + middleName + " " + lastName; }
     public Date getDateOfBirth(){ return dateOfBirth; }
 
-
 }

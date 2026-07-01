@@ -1,10 +1,10 @@
 import java.time.Year;
-import java.util.Date;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.Scanner;
 
 public class Student extends Person{
-    
+
     private static int nextStudentId=1;
     private int studentId;
     protected String major;
@@ -33,12 +33,25 @@ public class Student extends Person{
         nextStudentId++;
     }
 
+    public Student(String firstName, String middleName, String lastName, Date dateOfBirth,
+                  String major = "", String degree, Year expectedGraduation){
+        super(firstName, middleName, lastName, dateOfBirth);//passes names and date of birth to person constructor.
+        this.studentId = nextStudentId;
+        this.major = " ";
+        this.degree = degree;
+        this.gpa = 0.0;
+        this.expectedGraduation = expectedGraduation;
+        nextStudentId++;
+    }
+
+    //getters
     public int getStudentId(){ return studentId; }
     public String getMajor(){ return major; }
     public String getDegree(){ return degree; }
     double getGpa(){ return gpa; }
     public Year getExpectedGraduation(){return expectedGraduation; }
 
+    //setters
     public void setMajor(String major){
         this.major = major; }
     public void setDegree(String degree){
@@ -48,12 +61,14 @@ public class Student extends Person{
     public void setExpectedGraduation(Year expectedGraduation){
         this.expectedGraduation = expectedGraduation; }
 
-    private double calculateGpa(){
+    //for manuall input of student grades
+    public double inputGpa(){
         ArrayList<Double> gradePoints = new ArrayList<Double>();
         Scanner reader = new Scanner(System.in);
         int classNum = 0;
         double sum = 0.0;
         boolean stopInput = false;
+
         //flavor text
         System.out.println("Enter letter grades. Type 'EXIT' to Stop.");
 
@@ -85,16 +100,16 @@ public class Student extends Person{
                 classNum++; }
         } while (!stopInput);
 
-            //if no grades
-            if (gradePoints.isEmpty()) {
-                this.gpa = 0.0;
-                return this.gpa;}
-            //calculate average
-            for (int i = 0; i < gradePoints.size(); i++) {
-                sum += gradePoints.get(i);
-            }
-            this.gpa = sum / gradePoints.size();
-            System.out.println("GPA updated to; " + this.gpa);
-            return this.gpa;
+        //if no grades
+        if (gradePoints.isEmpty()) {
+            this.gpa = 0.0;
+            return this.gpa;}
+        //calculate average
+        for (int i = 0; i < gradePoints.size(); i++) {
+            sum += gradePoints.get(i);
         }
+        this.gpa = sum / gradePoints.size();
+        System.out.println("GPA updated to; " + this.gpa);
+        return this.gpa;
+    }
 }
