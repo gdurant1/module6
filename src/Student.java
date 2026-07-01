@@ -83,17 +83,16 @@ public class Student extends Person{
                 classNum++;
             }
         } while (!stopInput);
-        return 0;//need to change
-    }
 
-    private double calculateGpa(ArrayList<Double> gradePoints){
-        double sum = 0.0;
-        //if no grades
-        if(gradePoints == null || gradePoints.isEmpty()){
-            return 0.0; }
-        for(int i = 0; i < gradePoints.size(); i++ ){
-            sum += gradePoints.get(i); }
-        double gpa = sum/ gradePoints.size();
-        return gpa;
-    }
+            double sum = 0.0;
+            //if no grades
+            if (gradePoints == null || gradePoints.isEmpty()) {
+                return 0.0;
+            }
+            for (int i = 0; i < gradePoints.size(); i++) {
+                sum += gradePoints.get(i);
+            }
+            double gpa = sum / gradePoints.size();
+            return gpa;
+        }
 }
