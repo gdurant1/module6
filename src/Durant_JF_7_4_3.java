@@ -4,6 +4,9 @@ import java.util.Date;
 import java.util.Scanner;
 
 public class Durant_JF_7_4_3 {
+    public static void main(String[] args) {
+        Student jack = new Student("Jack", "doe", "ray", "computers", "AS", 2026 );
+    }
 
     public class Student extends Person{
 
@@ -49,8 +52,10 @@ public class Durant_JF_7_4_3 {
             this.gpa = gpa; }
         public void setExpectedGraduation(Year expectedGraduation){
             this.expectedGraduation = expectedGraduation; }
-
-        private double calculateGpa(){
+        //to take input
+        private double calculateGpa(){}
+        //for manuall input of student grades
+        private double inputGpa(){
             ArrayList<Double> gradePoints = new ArrayList<Double>();
             Scanner reader = new Scanner(System.in);
             int classNum = 0;
