@@ -94,6 +94,7 @@ public class Student extends Person{
                 sum += gradePoints.get(i);
             }
             this.gpa = sum / gradePoints.size();
+            System.out.println("GPA updated to; " + this.gpa);
             return this.gpa;
         }
 }
